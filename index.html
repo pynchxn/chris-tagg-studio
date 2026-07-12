@@ -208,12 +208,15 @@
     }
 
     .work-item {
+      display: block;
       background: #FFFAF7;
       border-radius: 8px;
       overflow: hidden;
       border: 1px solid #E8E4DC;
       transition: all 0.3s ease;
       cursor: pointer;
+      text-decoration: none;
+      color: inherit;
     }
 
     .work-item:hover {
@@ -600,7 +603,7 @@
       <p class="section-desc">A few projects I'm proud of. Each one solved a real business problem.</p>
     </div>
     <div class="work-grid">
-      <div class="work-item">
+      <a href="http://waynethewelder.com" class="work-item">
         <div class="work-image">
           <img src="assets/wayne.png" alt="Preview of Wayne The Welder website project">
         </div>
@@ -610,8 +613,8 @@
           <p class="work-desc">Full website built from scratch to showcase his services.</p>
           <div class="work-stat">+42% Leads</div>
         </div>
-      </div>
-      <div class="work-item">
+      </a>
+      <a href="#" class="work-item">
         <div class="work-image">
           <img src="assets/project-placeholder.svg" alt="Preview of local retail website project">
         </div>
@@ -621,8 +624,8 @@
           <p class="work-desc">Custom storefront for an established shop.</p>
           <div class="work-stat">+61% average order value</div>
         </div>
-      </div>
-      <div class="work-item">
+      </a>
+      <a href="#" class="work-item">
         <div class="work-image">
           <img src="assets/project-placeholder.svg" alt="Preview of SaaS dashboard project">
         </div>
@@ -632,7 +635,7 @@
           <p class="work-desc">Simplified the user interface for clarity.</p>
           <div class="work-stat">−35% support tickets</div>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
