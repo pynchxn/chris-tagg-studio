@@ -223,13 +223,16 @@
     }
 
     .work-image {
-      background: linear-gradient(135deg, #E8DCC8 0%, #D4C9B8 100%);
       height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: #9A8A7A;
+      overflow: hidden;
+      background: linear-gradient(135deg, #E8DCC8 0%, #D4C9B8 100%);
+    }
+
+    .work-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .work-content {
@@ -598,7 +601,9 @@
     </div>
     <div class="work-grid">
       <div class="work-item">
-        <div class="work-image">project image</div>
+        <div class="work-image">
+          <img src="assets/wayne.png" alt="Preview of Wayne The Welder website project">
+        </div>
         <div class="work-content">
           <div class="work-label">Wayne The Welder</div>
           <h3 class="work-title">Website Design & Deployment</h3>
@@ -607,7 +612,9 @@
         </div>
       </div>
       <div class="work-item">
-        <div class="work-image">project image</div>
+        <div class="work-image">
+          <img src="assets/project-placeholder.svg" alt="Preview of local retail website project">
+        </div>
         <div class="work-content">
           <div class="work-label">local retail</div>
           <h3 class="work-title">E-Commerce Site</h3>
@@ -616,7 +623,9 @@
         </div>
       </div>
       <div class="work-item">
-        <div class="work-image">project image</div>
+        <div class="work-image">
+          <img src="assets/project-placeholder.svg" alt="Preview of SaaS dashboard project">
+        </div>
         <div class="work-content">
           <div class="work-label">saas company</div>
           <h3 class="work-title">Dashboard Rebuild</h3>
