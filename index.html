@@ -458,6 +458,16 @@
       font-weight: 500;
     }
 
+    a.contact-method-text {
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a.contact-method-text:hover {
+      color: #8B6340;
+      text-decoration: underline;
+    }
+
     /* Footer */
     .footer {
       padding: 48px 40px;
@@ -791,11 +801,11 @@
       <div class="contact-methods">
         <div class="contact-method">
           <div class="contact-method-title">Email</div>
-          <a href="mailto:hello@christagg.studio" class="contact-method-text">hello@christagg.studio</a>
+          <a href="mailto:hello@christagg.studio?subject=Website%20enquiry" class="contact-method-text">hello@christagg.studio</a>
         </div>
         <div class="contact-method">
           <div class="contact-method-title">WhatsApp</div>
-          <div class="contact-method-text">+44 7936747364</div>
+          <a href="https://wa.me/447936747364?text=Hi%20Chris%2C%20I%27d%20like%20to%20chat%20about%20a%20website%20project" class="contact-method-text" target="_blank" rel="noopener">+44 7936747364</a>
         </div>
         <div class="contact-method">
           <div class="contact-method-title">Location</div>
