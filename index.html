@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chris Tagg Studio - Web Design & Development, Wales</title>
+  <title>Chris Tagg Studio - Web Design, Development & AI | Wales</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -77,9 +77,17 @@
     /* Hero */
     .hero {
       padding: 80px 40px;
+      text-align: center;
+      background-color: #FAF8F5;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.3'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse at 50% -10%, #FFFDFB 0%, #FAF8F5 45%, #F1E9DD 100%);
+      background-repeat: repeat, no-repeat;
+    }
+
+    .hero-inner {
       max-width: 900px;
       margin: 0 auto;
-      text-align: center;
     }
 
     .hero-tag {
@@ -161,7 +169,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 40px;
-      max-width: 900px;
+      max-width: 640px;
       margin: 0 auto;
     }
 
@@ -195,6 +203,24 @@
       font-size: 14px;
       color: #7A7A75;
       line-height: 1.7;
+    }
+
+    /* AI */
+    .ai {
+      padding: 80px 40px;
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .ai-cta {
+      text-align: center;
+      margin-top: 48px;
     }
 
     /* Work */
@@ -483,6 +509,7 @@
 
       .what-i-do,
       .work,
+      .ai,
       .process,
       .testimonials,
       .local-focus,
@@ -501,23 +528,23 @@
     }
   </style>
   <!-- Essential SEO Meta Tags -->
-<meta name="description" content="Web design and development for local businesses across Wales and the UK. I build fast, conversion-focused websites that bring in customers. Easy to work with, local designer.">
-<meta name="keywords" content="web design Wales, web developer Cardiff, local business websites, freelance designer, conversion-focused design">
+<meta name="description" content="Web design, development and practical AI automation for local businesses across Wales and the UK. Conversion-focused websites plus AI tools that save you time and win more work.">
+<meta name="keywords" content="web design Wales, web developer Cardiff, local business websites, freelance designer, conversion-focused design, AI automation for small business, AI integration Wales, business AI solutions Cardiff, AI chatbot for business">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Chris Tagg Studio">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph (for social sharing) -->
-<meta property="og:title" content="Chris Tagg Studio - Web Design & Development for Local Businesses">
-<meta property="og:description" content="I build conversion-focused websites for local businesses. Based in Wales, easy to work with.">
+<meta property="og:title" content="Chris Tagg Studio - Web Design, Development & AI for Local Businesses">
+<meta property="og:description" content="Conversion-focused websites plus practical AI automation for local businesses. Based in Wales, easy to work with.">
 <meta property="og:url" content="https://christagg.studio">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://christagg.studio/og-image.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Chris Tagg Studio - Web Design & Development">
-<meta name="twitter:description" content="Web design and development for local businesses. Wales-based.">
+<meta name="twitter:title" content="Chris Tagg Studio - Web Design, Development & AI">
+<meta name="twitter:description" content="Websites and practical AI tools for local businesses. Wales-based.">
 <meta name="twitter:image" content="https://christagg.studio/og-image.jpg">
 
 <!-- Canonical URL -->
@@ -532,7 +559,7 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Chris Tagg Studio",
-  "description": "Web design and development for local businesses",
+  "description": "Web design, development and AI automation for local businesses",
   "url": "https://christagg.studio",
   "telephone": "+44-7936-747364",
   "email": "hello@christagg.studio",
@@ -547,6 +574,7 @@
   "priceRange": "$$",
   "image": "https://christagg.studio/logo.png",
   "areaServed": ["Cardiff", "Wales", "UK"],
+  "knowsAbout": ["Web Design", "Web Development", "Conversion Optimization", "AI Automation", "Business AI Integration"],
   "sameAs": [
     "https://instagram.com/christagg_webdesign"
   ]
@@ -563,6 +591,7 @@
     </a>
     <div class="nav-links">
       <a class="nav-link" href="#work">work</a>
+      <a class="nav-link" href="#ai">ai</a>
       <a class="nav-link" href="#about">about</a>
       <a class="nav-link" href="#contact">contact</a>
       <a class="nav-cta" href="#contact">get started</a>
@@ -570,16 +599,18 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-tag">Web Design & Development</div>
-    <h1 class="hero-title">I help local businesses build websites that work.</h1>
-    <p class="hero-desc">Beautiful, fast websites that convert visitors into customers. Based in Wales, working with businesses across the UK.</p>
-    <a class="hero-cta" href="#contact">let's chat about your project</a>
+    <div class="hero-inner">
+      <div class="hero-tag">Web Design & Development</div>
+      <h1 class="hero-title">I help local businesses build websites that work.</h1>
+      <p class="hero-desc">Beautiful, fast websites that convert visitors into customers. Based in Wales, working with businesses across the UK.</p>
+      <a class="hero-cta" href="#contact">let's chat about your project</a>
+    </div>
   </section>
 
   <section class="what-i-do">
     <div class="section-header">
       <h2 class="section-title">what i do</h2>
-      <p class="section-desc">I design and build websites that are easy to use, look great, and actually bring in customers.</p>
+      <p class="section-desc">I design and build websites that are easy to use, look great, and actually bring in customers—and I can add smart AI tools that take the busywork off your plate.</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
@@ -597,6 +628,43 @@
         <h3 class="service-title">Optimization</h3>
         <p class="service-text">I focus on what matters: conversions, speed, and keeping users happy.</p>
       </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3 class="service-title">AI Integration</h3>
+        <p class="service-text">Practical AI—chat assistants, automated follow-ups, and more—that saves you time and wins more work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai" class="ai">
+    <div class="section-header">
+      <h2 class="section-title">smarter with ai</h2>
+      <p class="section-desc">A great website is just the start. I can also add practical AI tools that quietly take work off your plate—answering customers, chasing leads, and handling the busywork—so you can focus on the job.</p>
+    </div>
+    <div class="ai-grid">
+      <div class="service-card">
+        <div class="service-icon">💬</div>
+        <h3 class="service-title">AI Chat Assistant</h3>
+        <p class="service-text">A 24/7 assistant on your site that answers common questions and captures leads while you're on the tools.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📅</div>
+        <h3 class="service-title">Booking &amp; Follow-Up</h3>
+        <p class="service-text">Automatic enquiry handling, scheduling, and reminder emails so no lead slips through the cracks.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✍️</div>
+        <h3 class="service-title">Reviews &amp; Content</h3>
+        <p class="service-text">AI help writing social posts and marketing copy, and gently requesting the reviews that build trust.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h3 class="service-title">AI Audit</h3>
+        <p class="service-text">Not sure where to start? I'll look at how your business runs and pinpoint where AI genuinely saves time.</p>
+      </div>
+    </div>
+    <div class="ai-cta">
+      <a class="hero-cta" href="#contact">see what AI could do for your business</a>
     </div>
   </section>
 
