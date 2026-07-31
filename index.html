@@ -87,6 +87,40 @@
       background: #8B6340;
     }
 
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-toggle-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #3D3D3A;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav.open .nav-toggle-bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav.open .nav-toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav.open .nav-toggle-bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
     /* Hero */
     .hero {
       padding: 80px 40px;
@@ -518,17 +552,31 @@
         padding: 16px 24px;
       }
 
-      .nav-links {
-        gap: 16px;
-      }
-
-      .nav-logo {
-        font-size: 18px;
-        gap: 8px;
-      }
-
-      .nav-logo-suffix {
+      .nav-logo-text {
         display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 24px 20px;
+        background: #FAF8F5;
+        border-bottom: 1px solid #E8E4DC;
+        box-shadow: 0 12px 24px rgba(61, 61, 58, 0.06);
+      }
+
+      .nav.open .nav-links {
+        display: flex;
       }
 
       .hero {
@@ -550,12 +598,16 @@
       }
 
       .nav-link {
-        font-size: 12px;
+        font-size: 15px;
+        padding: 14px 0;
+        border-bottom: 1px solid #E8E4DC;
       }
 
       .nav-cta {
-        padding: 8px 14px;
-        font-size: 12px;
+        margin-top: 14px;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 14px;
       }
     }
   </style>
@@ -622,7 +674,12 @@
       </svg>
       <span class="nav-logo-text">Chris Tagg <span class="nav-logo-suffix">Web Design</span></span>
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <div class="nav-links" id="nav-links">
       <a class="nav-link" href="#work">work</a>
       <a class="nav-link" href="#ai">ai</a>
       <a class="nav-link" href="#about">about</a>
@@ -879,5 +936,23 @@
       <a class="footer-link" href="https://github.com/pynchxn/chris-tagg-studio" target="_blank" rel="noopener">GitHub</a>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav');
+      var toggle = nav.querySelector('.nav-toggle');
+      var links = nav.querySelector('.nav-links');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      links.addEventListener('click', function (e) {
+        if (e.target.closest('a')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
